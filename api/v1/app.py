@@ -34,5 +34,14 @@ def page_not_found(e):
 if __name__ == "__main__":
     HBNB_API_HOST = getenv('HBNB_API_HOST')
     HBNB_API_PORT = getenv('HBNB_API_PORT')
+
+    if HBNB_API_HOST is None:
+        print("Error: HBNB_API_HOST environment variable not set.")
+        exit(1)
+
+    if HBNB_API_PORT is None:
+        print("Error: HBNB_API_PORT environment variable not set.")
+        exit(1)
+
     app.run(host=HBNB_API_HOST, port=HBNB_API_PORT,
             threaded=True, debug=True)
